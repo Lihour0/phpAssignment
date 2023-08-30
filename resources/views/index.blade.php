@@ -46,6 +46,12 @@
                     <img class="z-[2] opacity-80 group-hover:opacity-100 transition ease-in duration-300" src="https://static.frontendmasters.com/assets/courses/2023-08-25-chat-apis/thumb.webp" alt="Building a Slack Chat Bot" loading="lazy" height="350" width="350">
                 </div>
             </div>
+            @php
+            if(!Auth::user()){
+            echo 'hooelwllw';
+
+            }
+            @endphp
 
 
 

@@ -1,7 +1,7 @@
 <nav class="flex justify-between bg-red-950 h-20 relative py-4  items-center">
     <div class="flex relative lg:left-32 left-12 transition-all duration-300  items-center">
         <a href="/">
-        <img src="/master.png" width="46" height="26"/>
+            <img src="/master.png" width="46" height="26"/>
         </a>
     </div>
     <ul class=" items-center flex gap-7 lg:right-32 right-12 transition-all duration-300 relative  text-gray-400">
@@ -21,11 +21,34 @@
                 Pricing
             </a>
         </li>
+        @auth
+
         <li>
-            <a href="/">
+            <a href="/profile">
+                My Account
+            </a>
+        </li>
+        <li>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a href="/logout"
+                    onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                    Logout ({{ (Auth::user()->name)}})
+                </a>
+            </form>
+
+        </li>
+        @else
+
+        <li>
+            <a href="/login">
                 Login
             </a>
         </li>
-        <button class="py-3 px-5 bg-red-700 text-white rounded-full">Join Now</button>
+        <button class="py-3 px-5 bg-red-700 text-white rounded-full" href="/login">Join Now</button>
+        @endauth
     </ul>
 </nav>
