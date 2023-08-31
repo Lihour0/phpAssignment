@@ -47,16 +47,13 @@
                 </div>
             </div>
             @php
-            if(Auth::user()){
-            echo Auth::user()->role;
+            if(!Auth::user()){
+            echo 'hooelwllw';
 
             }
             @endphp
-            @can('teacher')
-            maybe bro
-            @else
-            ez clap
-
+            @can('student')
+            hello
             @endcan
 
 
