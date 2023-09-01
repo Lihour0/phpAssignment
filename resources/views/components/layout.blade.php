@@ -11,5 +11,6 @@
         <main class="lg:px-32 px-12 transition-all duration-300">
             {{$slot}}
         </main>
+            @livewire('wire-elements-modal')
     </body>
 </html>

@@ -11,6 +11,13 @@
                 Course
             </a>
         </li>
+        @can('teacher')
+        <li>
+            <a href="/mycourse">
+                My Course
+            </a>
+        </li>
+        @else
         <li>
             <a href="/">
                 Learn
@@ -21,6 +28,9 @@
                 Pricing
             </a>
         </li>
+
+
+        @endcan
         @auth
 
         <li>
@@ -48,7 +58,10 @@
                 Login
             </a>
         </li>
-        <button class="py-3 px-5 bg-red-700 text-white rounded-full" href="/login">Join Now</button>
+        <button class="py-2 px-5 bg-red-700 text-white rounded-full" href="/login">Join Now</button>
         @endauth
+        @can('teacher')
+        <button type="button" class="py-2 px-5 bg-red-700 text-white rounded-full" onclick="Livewire.dispatch('openModal', {component: 'add-course'})" >Add Course</button>
+        @endcan
     </ul>
 </nav>

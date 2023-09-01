@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,12 +22,18 @@ Route::get('/', function () {
 Route::get('/course', fn () =>
     view('show')
 );
+
 Route::get('/courses/{course}', fn () =>
     'welcome'
 );
 Route::get('/courses/{course}/{title}', fn () =>
     'welcome'
 );
+Route::get('/mycourse', fn () =>
+    view('mycourse.show')
+);
+
+Route::post('/mycourse', [CourseController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

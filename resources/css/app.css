@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input {
+    @apply text-black;
+}
+#modal-container {
+    @apply sm:max-w-7xl w-[1000px];
+}
+input[type="time"]::-webkit-datetime-edit-ampm-field {
+    display: none;
+}
+input[type="time"]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    margin: -10px;
+}

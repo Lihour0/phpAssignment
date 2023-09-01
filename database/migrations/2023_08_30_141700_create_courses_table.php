@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +17,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('bg_img');
-            $table->string('description');
-            $table->dateTime('duration');
+            $table->string('description')->nullable();
+            $table->time('duration')->nullable();
+            $table->boolean('paid_course')->default(true);
+            $table->foreignIdFor(User::class, 'author_id');
+            $table->json('tag')->nullable();
         });
     }
 
