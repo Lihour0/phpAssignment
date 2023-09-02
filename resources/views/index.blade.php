@@ -7,7 +7,7 @@
         <div class="grid h-[349px]  gap-5 grid-cols-2">
             <div class="relative">
                 <div class=" relative group ">
-                    <div class="z-20 absolute w-full h-full bg-gradient-to-l from-black via-black to-transparent ">
+                    <div class="z-[2] absolute w-full h-full bg-gradient-to-l from-black via-black to-transparent ">
                         <div class=" pl-24  w-full h-full bg-gradient-to-l from-black via-black to-transparent">
                             <div class="h-full p-5"
                                 style="background: radial-gradient(circle at left,rgba(0,0,0,.1) 0%,#000 25%);"
@@ -63,7 +63,6 @@
             <div>hi
 
             </div>
-            <div>hi</div>
             <div>hi</div>
 
 

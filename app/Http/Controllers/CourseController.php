@@ -20,6 +20,7 @@ class CourseController extends Controller
             'author_id'=> auth()->id(),
             'paid_course' => $req->paid_course == "true" ? true : false
         ]);
+        return redirect("/mycourse");
     }
 }
 

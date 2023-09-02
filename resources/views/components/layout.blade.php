@@ -5,12 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Course</title>
         @vite ('resources/css/app.css')
+        @vite ('resources/js/app.js')
         <x-nav />
+        @livewireStyles
     </head>
     <body class="bg-zinc-800 text-white">
         <main class="lg:px-32 px-12 transition-all duration-300">
             {{$slot}}
         </main>
-            @livewire('wire-elements-modal')
+        @livewire('wire-elements-modal')
+
     </body>
+    @stack('scripts')
+        @livewireScripts
 </html>

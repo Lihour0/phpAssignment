@@ -3,14 +3,14 @@
         Create Course
     </div>
 
-    <form class="p-3 " method="POST" action="/mycourse" enctype="multipart/form-data" >
+    <form class="p-3 " method="POST" action="/mycourse" wire:submit.prevent enctype="multipart/form-data" >
         @csrf
         <div class="">
 
-            <div class="grid gap-6 mb-6 w-full md:grid-cols-3">
+            <div class="grid gap-6 mb-6 w-full md:grid-cols-3 text-black">
                 <div>
                     <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input type="text" name="title"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required>
+                    <input type="text" name="title"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" >
                 </div>
                 <div>
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Background Image</label>
@@ -29,7 +29,7 @@
                 <div>
                     <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paid Course</label>
 
-                    <select name="paid_course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <select  name="paid_course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option value="true">Yes</option>
                         <option value="false">No</option>
 
@@ -37,8 +37,51 @@
                 </div>
                 <div>
                     <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Duration</label>
-                    <input name="duration" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <input name="duration" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                 </div>
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+                <div>
+                    <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Duration</label>
+                    <input name="duration" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                </div>
+                <div>
+                    <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Duration</label>
+                    <input name="duration" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                </div>
+                <div>
+
+                    <div>@json($test)</div>
+
+                </div>
+            </div>
+
+            <div>
+                <label  class="w-full mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" >
+            </div>
+            <div
+            >
+
+            </div>
+
+    <div class="text-black">
+
+                    <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag</label>
+                    <input  type="text" wire:keydown.enter="addInput" wire:model="newInput" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                    <button wire:click="addInput"></button>
+                            <ul class="flex ">
+                                @foreach ($inputs as $index => $input)
+                                <li class="flex  items-center border rounded p-2 my-2">
+                                    {{ $input }}
+                                    <button class="mr-2" wire:click="removeInput({{ $index }})">
+                                        x
+                                    </button>
+                                </li>
+                                @endforeach
+                            </ul>
+
+                    </div>
+
+        </div>
     </form>
-</div>
+    </div>
+

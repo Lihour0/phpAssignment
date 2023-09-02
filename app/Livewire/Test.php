@@ -2,10 +2,11 @@
 
 namespace App\Livewire;
 
-use LivewireUI\Modal\ModalComponent;
+use Livewire\Component;
 
-class Test extends ModalComponent
+class Test extends Component
 {
+    public $bro = "";
     public function render()
     {
         return view('livewire.test');
