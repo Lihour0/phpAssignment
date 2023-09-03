@@ -28,5 +28,11 @@ class CourseController extends Controller
         ]);
         return redirect("/mycourse");
     }
+    public function delete(Int $id){
+        $course = Course::findOrFail($id);
+        $this->authorize('delete',$course);
+        $course->delete();
+        return redirect('/mycourse');
+    }
 }
 

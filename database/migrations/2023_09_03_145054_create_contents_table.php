@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,10 +14,13 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('title');
-            $table->string('description')->nullable();
-            $table->json('video')->nullable;
+            $table->string('description');
+            $table->string('video_title');
+            $table->string('video_img');
+            $table->string('video');
+            $table->foreignIdFor(Course::class);
+            $table->string('video_description');
         });
     }
 

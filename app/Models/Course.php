@@ -26,4 +26,7 @@ class Course extends Authenticatable
     public function author(){
         return $this->belongsTo(User::class);
     }
+    public function content(){
+        return $this->hasMany(Content::class);
+    }
 }
