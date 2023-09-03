@@ -38,15 +38,9 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 
-            <x-input-label for="description" :value="__('Description')" />
-
-            <x-text-input id="description" class="block mt-1 w-full"
-                type="text"
-                name="description"
-                 />
-
-
-            <select id="role" name="role">
+            <div class="mt-4">
+            <x-input-label for="role" :value="__('Role')" />
+            <select class="rounded-md mt-1 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600  shadow-sm" id="role" name="role">
                 <option value="teacher">
                     Teacher
                 </option>
@@ -54,6 +48,8 @@
                     Student
                 </option>
             </select>
+
+            </div>
         </div>
 
         <div class="flex items-center justify-end mt-4">

@@ -6,7 +6,7 @@
             <div>
                 <div class="relative">
                     <div class="  group ">
-                        <div class="z-[1] absolute w-full h-full bg-gradient-to-l from-black via-black to-transparent ">
+                        <div class="z-[3] absolute w-full h-full bg-gradient-to-l from-black via-black to-transparent ">
                             <div class=" pl-24 w-full  h-full bg-gradient-to-l from-black via-black to-transparent">
                                 <div class="h-full p-5"
                                     style="background: radial-gradient(circle at left,rgba(0,0,0,.1) 0%,#000 25%);"

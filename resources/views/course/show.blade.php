@@ -2,24 +2,24 @@
     <section class="mt-10 ">
         <div class="flex">
             <div class="relative">
-                <img class="" src="https://static.frontendmasters.com/assets/courses/2023-08-25-chat-apis/thumb.webp" alt="Building a Slack Chat Bot" loading="lazy" height="230" width="230">
+                <img class="" src="{{$course->bg_img}}" alt="{{$course->title}}" loading="lazy" height="230" width="230">
             </div>
             <div class="ml-5">
-                <div class="text-[30px]">Building Slack Chat bot</div>
+                <div class="text-[30px]">{{$course->title}}</div>
                 <div>Topics: Real-Time</div>
                 <div class="flex relative my-5">
                     <a class="flex">
-                        <img class="rounded-full " src="https://static.frontendmasters.com/assets/teachers/lengstorf/thumb.webp" alt="Jason Lengstorf" loading="lazy" height="78" width="78">
+                        <img class="rounded-full " src="/storage/{{$course['author']->avatar}}" alt="{{$course['author']->name}}" loading="lazy" height="78" width="78">
                         <div class="ml-5 flex flex-col justify-center">
-                            <span class="text-xl">Jason Lengstorf</span>
-                            <span class="font-thin text-lg text-gray-400">Learn with Jason</span>
+                            <span class="text-xl">{{$course['author']->name}}</span>
+                            <span class="font-thin text-lg text-gray-400">{{$course['author']->motto}}</span>
                         </div>
                     </a>
                 </div>
 
                 <div class="my-2 text-sm flex items-center">
                     <span class="text-gray-400">
-                        2 hours, 10 minutes
+                        {{$course->duration}}
                     </span>
                     <strong class="ml-2 px-[4px] bg-gray-500 rounded-lg text-zinc-800">CC</strong>
                 </div>
@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="my-4 text-gray-400">
-                    Published: August 25, 2023
+                    Published: {{date("d M Y",strtotime($course->created_at))}}
                 </div>
                 <button class="mt-10 py-4 px-24 bg-red-600 text-xl rounded-full">
                     Get Unlimited Access Now
@@ -65,7 +65,10 @@
                     </div>
                 </div>
             </div>
-            <div>i
+            <div>
+                <div>
+
+                </div>
 
             </div>
 

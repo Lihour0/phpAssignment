@@ -15,13 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function(){ return view('index');});
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/course', fn () =>
-    view('show')
-);
+Route::get('/course',[CourseController::class, 'index']);
+
+Route::get('/course/{course}', [CourseController::class, 'show']);
 
 Route::get('/courses/{course}', fn () =>
     'welcome'
@@ -31,6 +29,7 @@ Route::get('/courses/{course}/{title}', fn () =>
 );
 Route::get('/mycourse', fn () =>
     view('mycourse.show')
+
 );
 
 Route::post('/mycourse', [CourseController::class, 'store']);

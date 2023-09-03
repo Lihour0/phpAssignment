@@ -7,7 +7,7 @@
     <ul class=" items-center flex gap-7 lg:right-32 right-12 transition-all duration-300 relative  text-gray-400">
         <li>
 
-            <a href="/">
+            <a href="/course">
                 Course
             </a>
         </li>

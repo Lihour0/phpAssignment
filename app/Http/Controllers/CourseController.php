@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     //
+    public function index(){
+        return view('course.index', ['courses' => Course::with('author')->get()]);
+    }
+    public function show(Course $course){
+        return view('course.show', ['course'=> $course]);
+    }
     public function store(Request $req){
         $req->validate([
             'title'=>['required'],

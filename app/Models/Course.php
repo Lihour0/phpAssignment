@@ -24,7 +24,6 @@ class Course extends Authenticatable
         'tag' => 'array'
     ];
     public function author(){
-
         return $this->belongsTo(User::class);
     }
 }

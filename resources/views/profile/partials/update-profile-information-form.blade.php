@@ -13,9 +13,16 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
         @csrf
         @method('patch')
+
+            <div class="mt-4">
+                <x-input-label for="avatar" value="Avatar" />
+                <input id="avatar" name="avatar" type="file" class="block w-full rounded-md mt-1 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600  shadow-sm" :value="old('avatar', $user->avatar)"
+                    autofocus autocomplete="avatar" />
+                <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
+            </div>
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -45,19 +52,26 @@
                     @endif
                 </div>
             @endif
+
+            <div class="mt-5">
+
+            <x-input-label for="motto" :value="__('Motto')" />
+            <x-text-input id="motto" name="motto" type="text" class="mt-1 block w-full" :value="old('motto', $user->motto)"  autofocus autocomplete="motto" />
+            </div>
         </div>
+
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+            <p
+                x-data="{ show: true }"
+                x-show="show"
+                x-transition
+                x-init="setTimeout(() => show = false, 2000)"
+                class="text-sm text-gray-600 dark:text-gray-400"
+            >{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>
