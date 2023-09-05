@@ -40,7 +40,7 @@
         </li>
         <li>
 
-            <form method="POST" action="{{ route('logout') }}">
+            <form class="mt-4" method="POST" action="{{ route('logout') }}">
                 @csrf
 
                 <a href="/logout"

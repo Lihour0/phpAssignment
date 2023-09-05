@@ -14,10 +14,5 @@ class MyCourseController extends Controller
     public function show(){
         return view('mycourse.show');
     }
-    public function delete(Int $id){
-        $course = Course::findOrFail($id);
-        $this->authorize('delete',$course);
-        $course->delete();
-        return redirect('/mycourse');
-    }
+
 }

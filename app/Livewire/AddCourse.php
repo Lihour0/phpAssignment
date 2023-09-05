@@ -42,17 +42,5 @@ class AddCourse extends ModalComponent
     }
 
 
-    public function addInput()
-    {
-        if ($this->newInput !== '') {
-            array_push($this->inputs, $this->newInput);
-            $this->newInput = '';
-        }
-    }
-
-    public function removeInput($index)
-    {
-        unset($this->inputs[$index]);
-    }
 }
 

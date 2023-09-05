@@ -8,7 +8,6 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
-        "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^1.1.2",
         "eslint": "^7.32.0",
@@ -18,8 +17,6 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@alpinejs/focus": "^3.13.0",
-        "@tailwindcss/forms": "^0.5.5",
-        "tw-elements": "1.0.0-rc.1"
+        "@tailwindcss/forms": "^0.5.5"
     }
 }
