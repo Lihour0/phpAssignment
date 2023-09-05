@@ -22,6 +22,7 @@ return new class extends Migration
             $table->boolean('paid_course')->default(true);
             $table->foreignIdFor(User::class, 'author_id');
             $table->string('tag')->nullable();
+                $table->string('course_description')->nullable();
         });
     }
 

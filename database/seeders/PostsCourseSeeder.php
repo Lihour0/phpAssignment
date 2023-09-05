@@ -15,7 +15,6 @@ class PostsCourseSeeder extends Seeder
     public function run(): void
     {
         //
-        User::factory(10)->create();
         Course::factory(10)->create();
         Content::factory(20)->create();
     }

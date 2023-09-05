@@ -37,7 +37,7 @@ class CourseFactory extends Factory
                 'Build Tools']),
             'duration' => fake()->time(),
             'course_description' => fake()->paragraph(2),
-            'author_id' => fake()->numberBetween(1, 20)
+            'author_id' => '1'
         ];
     }
 }

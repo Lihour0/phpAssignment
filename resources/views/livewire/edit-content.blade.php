@@ -1,4 +1,4 @@
-<div class="relative text-black  p-5"> <div class="text-xl "> Create Content </div>
+<div class="relative text-black  p-5"> <div class="text-xl "> Edit Content </div>
 
     <div x-data="{ contents: {{json_encode($content) }}, removedItem: @entangle('removedItem')  }">
         <form class="p-3" method="POST" wire:submit.prevent="update(contents)" enctype="multipart/form-data">

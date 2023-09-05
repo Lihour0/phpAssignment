@@ -23,7 +23,7 @@ class ContentFactory extends Factory
             'description' => fake()->paragraph(3),
             'video_description' => fake()->paragraph(2),
             'video_title'=> fake()->words(2, true),
-            'course_id' => fake()->numberBetween(1, 10)
+            'course_id' => fake()->numberBetween(1)
         ];
     }
 }
