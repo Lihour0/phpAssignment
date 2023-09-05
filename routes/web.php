@@ -23,15 +23,9 @@ Route::get('/course',[CourseController::class, 'index']);
 
 Route::get('/course/{course}', [CourseController::class, 'show']);
 
-Route::get('/courses/{course}', fn () =>
-    'welcome'
-);
-Route::get('/courses/{course}/{title}', fn () =>
-    'welcome'
-);
-Route::get('/mycourse', MyCourse::class);
+Route::get('/mycourse', MyCourse::class)->middleware('auth');
 
-Route::post('/mycourse', [CourseController::class, 'store']);
+Route::post('/mycourse', [CourseController::class, 'store'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

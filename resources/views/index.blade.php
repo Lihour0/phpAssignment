@@ -1,6 +1,6 @@
 <div>
 <x-layout>
-    <div>hi</div>
+    <div></div>
 
 </x-layout>
 </div>

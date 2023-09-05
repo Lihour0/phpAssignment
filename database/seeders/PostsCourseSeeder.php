@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Content;
 use App\Models\Course;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class PostsCourseSeeder extends Seeder
@@ -14,12 +15,8 @@ class PostsCourseSeeder extends Seeder
     public function run(): void
     {
         //
-        $courses = [
-            'title'=> "test",
-            'paid_course' => false,
-            'bg_img' => 'bro',
-            'author_id' => 40
-        ];
-        Course::create($courses);
+        User::factory(10)->create();
+        Course::factory(10)->create();
+        Content::factory(20)->create();
     }
 }
