@@ -25,7 +25,6 @@ class AddContent extends ModalComponent
 
 
     public function store($contents){
-        $this->validate();
         foreach($contents as $content){
             Content::create([
                 'title' => $content['title'],

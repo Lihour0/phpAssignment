@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Course</title>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <x-nav />
-        @vite ('resources/js/app.js')
     </head>
     <body class="bg-zinc-800 text-white">
         <main class="lg:px-32 px-12 transition-all duration-300">
