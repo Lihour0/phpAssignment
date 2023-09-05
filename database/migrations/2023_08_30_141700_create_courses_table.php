@@ -21,7 +21,7 @@ return new class extends Migration
             $table->time('duration')->nullable();
             $table->boolean('paid_course')->default(true);
             $table->foreignIdFor(User::class, 'author_id');
-            $table->json('tag')->nullable();
+            $table->string('tag')->nullable();
         });
     }
 

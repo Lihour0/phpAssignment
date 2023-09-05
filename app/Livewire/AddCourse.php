@@ -8,10 +8,6 @@ use LivewireUI\Modal\ModalComponent;
 
 class AddCourse extends ModalComponent
 {
-    public $test1='';
-    public $test = [];
-    public $inputs = [];
-    public $newInput = '';
 
     #[Rule('required')]
     public $title;
@@ -19,11 +15,13 @@ class AddCourse extends ModalComponent
     public $author_id;
     #[Rule('required')]
     public $duration;
-    public $paid_course;
+    public $paid_course = true;
+    public $paid_course_int;
     public $description;
+    public $course_description;
+    public $tag;
 
     public function mount(){
-        $this->paid_course = "true" ? true : false;
         $this->author_id = auth()->id();
         $this->bg_img = "https://static.frontendmasters.com/assets/courses/2023-08-13-node-js-v3/thumb.webp";
     }
@@ -31,7 +29,8 @@ class AddCourse extends ModalComponent
 
     public function store(){
         $this->validate();
-        Course::create($this->only(['title', 'bg_img','author_id', 'paid_course', 'duration','description']));
+        $this->paid_course = $this->paid_course == "true" ? 1 : 0;
+        Course::create($this->only(['title', 'bg_img','author_id', 'paid_course', 'course_description','duration','description', 'tag']));
         return $this->redirect('/mycourse');
     }
 

@@ -91,14 +91,15 @@
                                 </div>
                                 <div class="flex mt-5 gap-3">
                                     <button wire:click="$dispatch('openModal', { component: 'add-content', arguments: { course_id: {{$mycourse->id}} }})" class="py-2 px-4 bg-orange-600 rounded-full">Add Content</button>
-                                    <button class="py-2 px-4 bg-orange-600 rounded-full">Edit Course</button>
-                                    <button class="py-2 px-4 bg-orange-600 rounded-full">Edit Content</button>
+                                    <button wire:click="$dispatch('openModal', {component: 'edit-course', arguments:{ course: {{$mycourse}}}})" class="py-2 px-4 bg-orange-600 rounded-full">Edit Course</button>
+                                    <button wire:click="$dispatch('openModal', {component: 'edit-content', arguments: { content : {{$mycourse['content']}} }})" class="py-2 px-4 bg-orange-600 rounded-full">Edit Content</button>
                                     <button @click="confirm('Are you sure?') ? @this.delete({{$mycourse->id}}) : false" class="py-2 px-4 bg-red-600 rounded-full">Delete</button>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <img class="z-[2] opacity-80 group-hover:opacity-100 transition ease-in duration-300" src="https://static.frontendmasters.com/assets/courses/2023-08-25-chat-apis/thumb.webp" alt="Building a Slack Chat Bot" loading="lazy" height="350" width="350">
+                    <img class="z-[2] opacity-80 group-hover:opacity-100 transition ease-in duration-300" src="{{$mycourse->bg_img}}" alt="Building a Slack Chat Bot" loading="lazy" height="350" width="350">
                 </div>
                 @endforeach
             </div>

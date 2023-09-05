@@ -16,7 +16,6 @@ return new class extends Migration
             Schema::create('contents', function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
-                $table->string('description');
                 $table->string('video_title');
                 $table->string('video_img')->nullable();
                 $table->string('video')->nullable();

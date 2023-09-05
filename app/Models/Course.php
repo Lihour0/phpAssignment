@@ -15,13 +15,11 @@ class Course extends Authenticatable
         'title',
         'bg_img',
         'description',
+        'course_description',
         'duration',
         'paid_course',
         'author_id',
         'tag'
-    ];
-    protected $casts = [
-        'tag' => 'array'
     ];
     public function author(){
         return $this->belongsTo(User::class);

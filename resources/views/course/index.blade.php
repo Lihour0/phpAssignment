@@ -1,3 +1,4 @@
+<div>
 <x-layout>
     <div class="my-4 text-xl"
     >Courses</div>
@@ -100,3 +101,4 @@
 
     </section>
 </x-layout>
+</div>
